@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/navigation.css">
     <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/events.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -23,7 +24,7 @@
         <img src="./images/logo.png" alt="Логотип музея изобразительных искусств имени Александра Сергеевича Пушкина" />
         <div class="header__right">
             <form class="header__search-form" role="search">
-                <input class="header__search" type="search" aria-label="Поиск"/>
+                <input class="header__search" type="search" aria-label="Поиск" />
                 <button class="header__search-submit" type="submit" aria-label="Искать"></button>
             </form>
             <nav class="header__langs" aria-label="Выбрать язык">
@@ -51,13 +52,27 @@
     <main id="content" class="page__main">
         <section id="events">
             <h2>Выставки и события</h2>
-            <p>
-            <ul>
-                <li>Тату</li>
-                <li>Святослав Рихтер в кругу друзей. Москва - Коктебель.</li>
-                <li>От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</li>
+            <span id="buy_ticket" class="visually-hidden">Купить билет</span>
+            <ul class="events__list">
+                <li class="events__list-item">
+                    <img src="./images/events/richter.png" alt="" role="presentation">
+                    <h3 id="event-name-1">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
+                    <div id="event-date-1">до 20 ноября</div>
+                    <a href="#" aria-labelledby="event-name-1 event-date-1 buy_ticket">Купить билет</a>
+                </li>
+                <li class="events__list-item">
+                    <img src="./images/events/tatoo.png" alt="" role="presentation">
+                    <h3 id="event-name-2">Тату</h3>
+                    <div id="event-date-2">до 27 сентября</div>
+                    <a href="#" aria-labelledby="event-name-2 event-date-2 buy_ticket">Купить билет</a>
+                </li>
+                <li class="events__list-item">
+                    <img src="./images/events/matisse.png" alt="" role="presentation">
+                    <h3>От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина</h3>
+                    <div id="event-date-3">до 1 ноября</div>
+                    <a href="#" aria-labelledby="event-name-3 event-date-3 buy_ticket">Купить билет</a>
+                </li>
             </ul>
-            </p>
         </section>
 
         <section id="museum">
@@ -73,8 +88,11 @@
         <section id="live">
             <h2>Экскурсии и лекции в прямом эфире</h2>
             <p>
-                С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span lang="en">Zoom</span>; предусмотрен формат живого общения с возможностью задавать вопросы экскурсоводу (лектору).
-                <a href="#">Подробнее.</a>
+                С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и
+                детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span
+                    lang="en">Zoom</span>; предусмотрен формат живого общения с возможностью задавать вопросы
+                экскурсоводу (лектору).
+                <a href="#" aria-label="Подробнее о виртуальных мероприятиях.">Подробнее.</a>
             </p>
             <p>
                 Мы будем благодарны за любое <a href="#">пожертвование</a>. Все поступившие средства будут направлены на

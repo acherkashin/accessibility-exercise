@@ -1,0 +1,35 @@
+.events__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.events__list-item {
+    width: 30%;
+    flex-direction: column;
+    position: relative;
+}
+
+.events__list-item h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 88px;
+}
+
+.events__list-item a {
+    display: block;
+    color: var(--color-primary);
+    font-size: 22px;
+    text-decoration: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: calc(100% + 24px);
+}
