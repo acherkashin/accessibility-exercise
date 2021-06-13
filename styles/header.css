@@ -7,6 +7,10 @@
     flex-direction: row;
 }
 
+.header__search-form {
+    position: relative;
+}
+
 .header__search {
     background: #F9F9FB;
     border: 1px solid var(--color-secondary);
@@ -14,6 +18,17 @@
     border-radius: 26px;
     width: 295px;
     height: 48px;
+    position: inherit;
+}
+
+.header__search-submit {
+    width: 48px;
+    height: 48px;
+    background: url('./../images/search.png') no-repeat center center;
+    background-size: 20px 20px;
+    border: none;
+    position: absolute;
+    right: 0;
 }
 
 .header__langs {
