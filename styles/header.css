@@ -16,6 +16,11 @@
     height: 48px;
 }
 
+.header__langs {
+    display: flex;
+    flex-direction: row;
+}
+
 .header__lang-switch {
     display: flex;
     justify-content: center;

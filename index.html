@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/navigation.css">
-    <link rel="stylesheet" href="./styles/footer.css" <link
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <title>
@@ -22,9 +23,13 @@
         <img src="./images/logo.png" alt="Логотип музея изобразительных искусств имени Александра Сергеевича Пушкина" />
         <div class="header__right">
             <input class="header__search" />
-            <a class="header__lang-switch header__lang-switch--active" href="#"
-                aria-label="Перейти на русскую версию сайта">Рус</a>
-            <a class="header__lang-switch" href="#" aria-label="Перейти на английскую версию сайта">Eng</a>
+            <nav class="header__langs" aria-label="Выбрать язык">
+                <span class="header__lang-switch header__lang-switch--active">
+                    <span aria-hidden="true">Рус</span>
+                    <span class="visually-hidden">Русский</span>
+                </span>
+                <a class="header__lang-switch" href="#" aria-label="English">Eng</a>
+            </nav>
             <button class="header__login" aria-label="Авторизоваться">
                 <svg width="46" height="46" viewBox="0 0 46 46" focusable="false">
                     <path
@@ -34,7 +39,7 @@
             </button>
         </div>
     </header>
-    <nav class="page__navigation navigation">
+    <nav class="page__navigation navigation" aria-label="Основная">
         <a class="navigation__item" href="#events">Выставки и события</a>
         <a class="navigation__item" href="#museum">Музей</a>
         <a class="navigation__item" href="#online-translation">Онлайн трансляция</a>
@@ -65,10 +70,7 @@
         <section id="live">
             <h2>Экскурсии и лекции в прямом эфире</h2>
             <p>
-                С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и
-                детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе Zoom; предусмотрен
-                формат живого общения с возможностью задавать
-                вопросы экскурсоводу (лектору).
+                С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span lang="en">Zoom</span>; предусмотрен формат живого общения с возможностью задавать вопросы экскурсоводу (лектору).
                 <a href="#">Подробнее.</a>
             </p>
             <p>
@@ -87,9 +89,12 @@
 
                 <section>
                     <h3>Соцсети</h3>
-                    <a class="footer__social-link footer__social-link--mail" href="mailto:cherkalexander@gmail.com" aria-label="Связаться по почте"></a>
-                    <a class="footer__social-link footer__social-link--telegram" href="t.me/cherkalexander" aria-label="Связаться через Телеграм"></a>
-                    <a class="footer__social-link footer__social-link--facebook" href="#" aria-label="Связаться через Facebook"></a>
+                    <a class="footer__social-link footer__social-link--mail" href="mailto:cherkalexander@gmail.com"
+                        aria-label="Связаться по почте"></a>
+                    <a class="footer__social-link footer__social-link--telegram" href="t.me/cherkalexander"
+                        aria-label="Связаться через Телеграм"></a>
+                    <a class="footer__social-link footer__social-link--facebook" href="#"
+                        aria-label="Связаться через Facebook"></a>
                 </section>
             </div>
 
@@ -97,11 +102,11 @@
                 <h3>Подписка на новости</h3>
                 <form>
                     <div class="footer__row">
-                        <input class="footer__agree-checkbox" id="agree" type="checkbox" required/>
+                        <input class="footer__agree-checkbox" id="agree" type="checkbox" required />
                         <label class="footer__agree-label" for="agree">Согласен на обработку персональных данных</label>
                     </div>
                     <div class="footer__row">
-                        <input class="footer__email-field" id="email" type="email" required/>
+                        <input class="footer__email-field" id="email" type="email" required />
                         <label class="footer__email-label" for="email">Введите E-mail</label>
                         <button class="footer__subscribe-btn" type="submit">Подписаться</button>
                     </div>
