@@ -1,0 +1,23 @@
+.museum-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.museum-item {
+    list-style: none;
+    width: 30%;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.museum-item a {
+    display: block;
+    color: var(--color-primary);
+    font-size: 22px;
+    text-decoration: none;
+    margin-top: 24px;
+}
