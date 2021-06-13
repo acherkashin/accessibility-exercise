@@ -1,0 +1,11 @@
+.navigation__item {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--color-black);
+    margin-right: 40px;
+}
+
+.navigation__item:hover {
+    color: var(--color-primary);
+}
