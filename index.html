@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/navigation.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/footer.css" <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>
         Государственный музей изобразительных искусств имени Александра Сергеевича Пушкина
     </title>
@@ -20,7 +22,8 @@
         <img src="./images/logo.png" alt="Логотип музея изобразительных искусств имени Александра Сергеевича Пушкина" />
         <div class="header__right">
             <input class="header__search" />
-            <a class="header__lang-switch header__lang-switch--active" href="#" aria-label="Перейти на русскую версию сайта">Рус</a>
+            <a class="header__lang-switch header__lang-switch--active" href="#"
+                aria-label="Перейти на русскую версию сайта">Рус</a>
             <a class="header__lang-switch" href="#" aria-label="Перейти на английскую версию сайта">Eng</a>
             <button class="header__login" aria-label="Авторизоваться">
                 <svg width="46" height="46" viewBox="0 0 46 46" focusable="false">
@@ -75,26 +78,36 @@
         </section>
     </main>
 
-    <footer class="page__footer">
-        <a href="#">Посетителям с ограниченными возможностями</a>
-        <a href="#">Билеты и льготы</a>
-        <a href="#">Противодействие коррупции</a>
-        <section>
-            <h2>Подписка на новости</h2>
-            <form>
-                <input id="agree" type="checkbox" />
-                <label for="agree">Согласен на обработку персональных данных</label>
-                <input type="email" />
-                <input type="submit">Подписаться</input>
-            </form>
-        </section>
+    <footer class="page__footer footer">
+        <div class="footer__inner">
+            <div class="footer__left">
+                <a class="footer__left-link" href="#">Посетителям с ограниченными возможностями</a>
+                <a class="footer__left-link" href="#">Билеты и льготы</a>
+                <a class="footer__left-link" href="#">Противодействие коррупции</a>
 
-        <section>
-            <h2>Соцсети</h2>
-            <a href="mailto:cherkalexander@gmail.com" aria-label="Связаться по почте"></a>
-            <a href="t.me/cherkalexander" aria-label="Связаться через Телеграм"></a>
-            <a href="#" aria-label="Связаться через Facebook"></a>
-        </section>
+                <section>
+                    <h3>Соцсети</h3>
+                    <a class="footer__social-link footer__social-link--mail" href="mailto:cherkalexander@gmail.com" aria-label="Связаться по почте"></a>
+                    <a class="footer__social-link footer__social-link--telegram" href="t.me/cherkalexander" aria-label="Связаться через Телеграм"></a>
+                    <a class="footer__social-link footer__social-link--facebook" href="#" aria-label="Связаться через Facebook"></a>
+                </section>
+            </div>
+
+            <section class="footer__right">
+                <h3>Подписка на новости</h3>
+                <form>
+                    <div class="footer__row">
+                        <input class="footer__agree-checkbox" id="agree" type="checkbox" required/>
+                        <label class="footer__agree-label" for="agree">Согласен на обработку персональных данных</label>
+                    </div>
+                    <div class="footer__row">
+                        <input class="footer__email-field" id="email" type="email" required/>
+                        <label class="footer__email-label" for="email">Введите E-mail</label>
+                        <button class="footer__subscribe-btn" type="submit">Подписаться</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </footer>
 </body>
 
