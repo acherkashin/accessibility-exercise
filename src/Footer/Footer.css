@@ -1,0 +1,113 @@
+.footer {
+  background-color: var(--color-gray);
+}
+
+.footer h3 {
+  margin-top: 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-flow: row wrap;
+  width: var(--page-width);
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.footer__left-link {
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+
+.footer__social-link {
+  text-decoration: none;
+  margin-right: 16px;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 2px;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.footer__social-link--mail {
+  background-image: url('./../images/social/mail.png');
+}
+
+.footer__social-link--telegram {
+  background-image: url('./../images/social/telegram.png');
+}
+
+.footer__social-link--facebook {
+  background-image: url('./../images/social/facebook.png');
+}
+
+.footer__right {
+  flex: 1;
+}
+
+.footer__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer__agree-label {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.footer__agree-checkbox {
+  width: 24px;
+  height: 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  margin-right: 4px;
+}
+
+.footer__email-label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.footer__email-field {
+  min-height: 44px;
+  width: 300px;
+  background: 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-black);
+  margin-right: 8px;
+}
+
+.footer__email-field:focus + label {
+  top: -10px;
+  font-size: 14px;
+}
+
+.footer__subscribe-btn {
+  font-size: 18px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
