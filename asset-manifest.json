@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/accessibility-exercise/static/css/main.a976bda4.chunk.css",
+    "main.js": "/accessibility-exercise/static/js/main.63bbea7c.chunk.js",
+    "main.js.map": "/accessibility-exercise/static/js/main.63bbea7c.chunk.js.map",
+    "runtime-main.js": "/accessibility-exercise/static/js/runtime-main.b9e3f753.js",
+    "runtime-main.js.map": "/accessibility-exercise/static/js/runtime-main.b9e3f753.js.map",
+    "static/js/2.ae726244.chunk.js": "/accessibility-exercise/static/js/2.ae726244.chunk.js",
+    "static/js/2.ae726244.chunk.js.map": "/accessibility-exercise/static/js/2.ae726244.chunk.js.map",
+    "static/js/3.20e1a312.chunk.js": "/accessibility-exercise/static/js/3.20e1a312.chunk.js",
+    "static/js/3.20e1a312.chunk.js.map": "/accessibility-exercise/static/js/3.20e1a312.chunk.js.map",
+    "index.html": "/accessibility-exercise/index.html",
+    "static/css/main.a976bda4.chunk.css.map": "/accessibility-exercise/static/css/main.a976bda4.chunk.css.map",
+    "static/js/2.ae726244.chunk.js.LICENSE.txt": "/accessibility-exercise/static/js/2.ae726244.chunk.js.LICENSE.txt",
+    "static/media/cover-big.dfa6a434.jpg": "/accessibility-exercise/static/media/cover-big.dfa6a434.jpg",
+    "static/media/gallary.b9b05b01.png": "/accessibility-exercise/static/media/gallary.b9b05b01.png",
+    "static/media/lopuhinyx.9fa2dc7f.png": "/accessibility-exercise/static/media/lopuhinyx.9fa2dc7f.png",
+    "static/media/matisse.2fbbb979.png": "/accessibility-exercise/static/media/matisse.2fbbb979.png",
+    "static/media/museion.2334c668.png": "/accessibility-exercise/static/media/museion.2334c668.png",
+    "static/media/personal.fe2adaa3.png": "/accessibility-exercise/static/media/personal.fe2adaa3.png",
+    "static/media/richter.2c43c3a9.png": "/accessibility-exercise/static/media/richter.2c43c3a9.png",
+    "static/media/richter.d36a5b8e.png": "/accessibility-exercise/static/media/richter.d36a5b8e.png",
+    "static/media/study.14c07374.png": "/accessibility-exercise/static/media/study.14c07374.png",
+    "static/media/tatoo.fac1732d.png": "/accessibility-exercise/static/media/tatoo.fac1732d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9e3f753.js",
+    "static/js/2.ae726244.chunk.js",
+    "static/css/main.a976bda4.chunk.css",
+    "static/js/main.63bbea7c.chunk.js"
+  ]
+}
