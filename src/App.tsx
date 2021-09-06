@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <a id="skip-to-content" href="#content">Перейти к основному содержимому страницы</a>
-      <Header />
+      <Header className="page__header"/>
       <Navigation />
       <main id="content" className="page__main">
         <section aria-labelledby="announces">
@@ -51,7 +51,7 @@ function App() {
         </p>
       </section>
 
-      <Footer />
+      <Footer className="page__footer"/>
     </div>
   );
 }

@@ -1,8 +1,13 @@
+import classNames from 'classnames';
 import './Footer.css';
 
-export function Footer() {
+export interface FooterProps {
+  className?: string;
+}
+
+export function Footer({ className }: FooterProps) {
   return (
-    <footer className="page__footer footer">
+    <footer className={classNames("footer", className)}>
       <div className="footer__inner">
         <div className="footer__left">
           <a className="footer__left-link" href="#">Посетителям с ограниченными возможностями</a>
