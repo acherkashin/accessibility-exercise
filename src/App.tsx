@@ -8,9 +8,9 @@ import { Footer } from './Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="page">
       <a id="skip-to-content" href="#content">Перейти к основному содержимому страницы</a>
-      <Header className="page__header"/>
+      <Header className="page__header" />
       <Navigation />
       <main id="content" className="page__main">
         <section aria-labelledby="announces">
@@ -28,30 +28,30 @@ function App() {
           <h2 id="museum">Музей</h2>
           <MuseumList />
         </section>
+        <section aria-describedby="online-translation">
+          <h2 id="online-translation">Онлайн трансляция</h2>
+          <iframe src="https://www.youtube.com/embed/5qRR-5H1XgU" title="Ай Вейвей: движение к общечеловеческому"
+            width="1030" height="600"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </section>
+
+        <section aria-labelledby="live">
+          <h2 id="live">Экскурсии и лекции в прямом эфире</h2>
+          <p>
+            С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и
+            детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span
+              lang="en">Zoom</span>; предусмотрен формат живого общения с возможностью задавать вопросы
+            экскурсоводу (лектору).
+            <a href="#" aria-label="Подробнее о виртуальных мероприятиях.">Подробнее.</a>
+          </p>
+          <p>
+            Мы будем благодарны за любое <a href="#">пожертвование</a>. Все поступившие средства будут направлены на
+            организацию онлайн-проектов для наших посетителей.
+          </p>
+        </section>
       </main>
-      <section aria-describedby="online-translation">
-        <h2 id="online-translation">Онлайн трансляция</h2>
-        <iframe src="https://www.youtube.com/embed/5qRR-5H1XgU" title="Ай Вейвей: движение к общечеловеческому"
-          width="1030" height="600"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      </section>
 
-      <section aria-labelledby="live">
-        <h2 id="live">Экскурсии и лекции в прямом эфире</h2>
-        <p>
-          С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и
-          детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span
-            lang="en">Zoom</span>; предусмотрен формат живого общения с возможностью задавать вопросы
-          экскурсоводу (лектору).
-          <a href="#" aria-label="Подробнее о виртуальных мероприятиях.">Подробнее.</a>
-        </p>
-        <p>
-          Мы будем благодарны за любое <a href="#">пожертвование</a>. Все поступившие средства будут направлены на
-          организацию онлайн-проектов для наших посетителей.
-        </p>
-      </section>
-
-      <Footer className="page__footer"/>
+      <Footer className="page__footer" />
     </div>
   );
 }
