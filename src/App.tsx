@@ -13,6 +13,7 @@ function App() {
       <Header className="page__header" />
       <Navigation />
       <main id="content" className="page__main">
+        <h1 className="visually-hidden">Пушкинский музей</h1>
         <section aria-labelledby="announces">
           <h2 id="announces" className="visually-hidden">Анонсы мероприятий</h2>
           <img src={coverBig}
