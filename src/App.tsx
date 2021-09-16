@@ -5,12 +5,16 @@ import { Navigation } from './Navigation/Navigation';
 import coverBig from './images/cover-big.jpg';
 import { MuseumList } from './MuseumList/MuseumList';
 import { Footer } from './Footer/Footer';
+import { useState } from 'react';
+import { Dialog } from './Dialog/Dialog';
 
 function App() {
+  const [isLoginOpened, setLoginOpened] = useState(false);
+
   return (
     <div className="page">
       <a id="skip-to-content" href="#content">Перейти к основному содержимому страницы</a>
-      <Header className="page__header" />
+      <Header className="page__header" onLoginClick={() => setLoginOpened(true)} />
       <Navigation />
       <main id="content" className="page__main">
         <h1 className="visually-hidden">Пушкинский музей</h1>
@@ -53,6 +57,11 @@ function App() {
       </main>
 
       <Footer className="page__footer" />
+
+      <Dialog open={isLoginOpened} title="Login Dialog" onClose={() => setLoginOpened(false)}>
+        <input></input>
+        <input></input>
+      </Dialog>
     </div>
   );
 }

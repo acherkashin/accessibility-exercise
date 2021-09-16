@@ -13,7 +13,7 @@ export function EventListItem({ id, imageSrc, title, date }: EventListItemProps)
       <img src={imageSrc} alt="" role="presentation" />
       <h3 id={`event-name-${id}`}>{title}</h3>
       <div id={`event-date-${id}`}>{date}</div>
-      <a href="#" aria-labelledby={`event-name-${id} event-date-${id} buy_ticket`}>Купить билет</a>
+      <a href="#" aria-labelledby={`buy_ticket event-name-${id} event-date-${id}`}>Купить билет</a>
     </li>
   );
 }
