@@ -1,7 +1,7 @@
 import FocusTrap from 'focus-trap-react';
 import classNames from 'classnames';
 import './Dialog.css';
-import { useMemo } from 'react';
+import { KeyboardEventHandler, useCallback, useMemo } from 'react';
 import { uuidv4 } from '../utils/guidUtils';
 
 export interface DialogProps {
@@ -17,13 +17,19 @@ export interface DialogProps {
 export function Dialog({ title, className, open, children, width, height, onClose }: DialogProps) {
   const titleId = useMemo(() => uuidv4(), []);
 
+  const handleKeyUp: KeyboardEventHandler<HTMLDivElement> = useCallback((e) => {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  }, [onClose]);
+
   if (!open) {
     return null;
   }
 
   return <FocusTrap>
-    <div className="dialog-overlay">
-      <div aria-labelledby={titleId} className={classNames("dialog", className)} role="dialog" style={{ width, height }}>
+    <div className="dialog-overlay" onClick={onClose}>
+      <div aria-labelledby={titleId} className={classNames("dialog", className)} role="dialog" style={{ width, height }} onKeyUp={handleKeyUp}>
         <header className="dialog__header">
           <h2 className="dialog__title" id={titleId}>{title}</h2>
           <button onClick={onClose}>Close</button>
