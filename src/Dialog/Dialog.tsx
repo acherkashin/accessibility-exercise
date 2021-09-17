@@ -1,23 +1,32 @@
 import FocusTrap from 'focus-trap-react';
+import classNames from 'classnames';
 import './Dialog.css';
 
 export interface DialogProps {
   title: string;
   open: boolean;
+  className?: string;
+  width: number | string;
+  height: number | string;
   onClose: () => void;
   children: React.ReactNode;
 }
 
-export function Dialog({ title, open, children, onClose }: DialogProps) {
+export function Dialog({ title, className, open, children, width, height, onClose }: DialogProps) {
+  if (!open) {
+    return null;
+  }
 
-  return <FocusTrap active={open}>
+  return <FocusTrap>
     <div className="dialog-overlay">
-      <div className="dialog" role="dialog">
+      <div className={classNames("dialog", className)} role="dialog" style={{ width, height }}>
         <header className="dialog__header">
-          <h2>{title}</h2>
+          <h2 className="dialog__title">{title}</h2>
           <button onClick={onClose}>Close</button>
         </header>
-        {children}
+        <div className="dialog__content">
+          {children}
+        </div>
       </div>
     </div>
   </FocusTrap>

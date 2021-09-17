@@ -6,12 +6,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
 }
 
 .dialog {
   z-index: 1;
-  background: white;
+  background-color: white;
   box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
-  width: 800px;
-  height: 800px;
+  padding: 70px 100px;
+}
+
+.dialog__header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  color: var(--color-black);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dialog__title {
+  margin: 0;
 }
