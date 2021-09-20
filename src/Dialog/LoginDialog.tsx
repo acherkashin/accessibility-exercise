@@ -7,17 +7,15 @@ export interface LoginDialogProps {
 }
 
 export function LoginDialog({ open, onClose }: LoginDialogProps) {
-  return <Dialog className="login-dialog" open={open} title="Вход в личный кабинет" width={792} height={579} onClose={onClose}>
+  return <Dialog className="login-dialog" open={open} title="Вход в личный кабинет" width={700} height={550} onClose={onClose}>
     <div className="login-dialog__content">
-      <label>
-        Логин
-        <input></input>
-      </label>
-      <label>
-        Пароль
-        <input></input>
-      </label>
-      <button>Войти</button>
+      <label className="login-dialog__label">Логин</label>
+      <input className="login-dialog__input" type="text"></input>
+
+      <label className="login-dialog__label">Пароль</label>
+      <input className="login-dialog__input" type="text"></input>
+
+      <button className="login-dialog__login">Войти</button>
     </div>
   </Dialog>;
 }
