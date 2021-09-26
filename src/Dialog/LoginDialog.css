@@ -22,6 +22,14 @@
   height: 50px;
 }
 
+.login-dialog__input--invalid {
+  border-color: red;
+}
+
+.login-dialog__input--invalid:focus-visible {
+  outline: red;
+}
+
 .login-dialog__login {
   background-color: #C7D2E9;
   border-radius: 8px;

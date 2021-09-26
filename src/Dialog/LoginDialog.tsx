@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ChangeEventHandler, useCallback, useReducer } from 'react';
 import { Dialog } from './Dialog';
 import './LoginDialog.css';
@@ -29,13 +30,17 @@ export function LoginDialog({ open, onClose }: LoginDialogProps) {
     <div className="login-dialog__content">
       <div className="login-dialog__field">
         <label htmlFor="login" className="login-dialog__label">Логин</label>
-        <input id="login" className="login-dialog__input" type="text" onChange={handleLoginChanged} value={email} required aria-required={true}></input>
+        <input id="login" className={classNames("login-dialog__input", {
+          "login-dialog__input--invalid": emailValidation.length > 0,
+        })} type="text" onChange={handleLoginChanged} value={email} required></input>
         <ValidationList validations={emailValidation} />
       </div>
 
       <div className="login-dialog__field">
         <label htmlFor="password" className="login-dialog__label">Пароль</label>
-        <input id="password" className="login-dialog__input" type="text" onChange={handlePasswordChanged} value={password} required aria-required={true}></input>
+        <input id="password" className={classNames("login-dialog__input", {
+          "login-dialog__input--invalid": passwordValidation.length > 0
+        })} type="text" onChange={handlePasswordChanged} value={password} required></input>
         <ValidationList validations={passwordValidation} />
       </div>
 
