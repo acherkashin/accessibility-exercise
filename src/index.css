@@ -23,23 +23,11 @@ code {
 
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-}
-
-h2 {
-  font-size: 50px;
-  font-weight: 600;
-  line-height: 60px;
-  margin: 120px 0 40px;
-}
-
-h3 {
-  font-size: 24px;
-  line-height: 28px;
-  margin: 30px 0 15px 0;
 }
 
 .visually-hidden {
@@ -65,38 +53,4 @@ h3 {
 #skip-to-content:focus-visible {
   position: absolute;
   top: 0;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.page__header {
-  width: var(--page-width);
-  max-width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.page__navigation {
-  width: var(--page-width);
-  max-width: 100%;
-  margin: auto;
-  margin-bottom: 32px;
-}
-
-.page__main {
-  width: var(--page-width);
-  max-width: 100%;
-  margin: auto;
-}
-
-.page__footer {
-  width: 100%;
-  padding-top: 73px;
-  padding-bottom: 95px;
 }
