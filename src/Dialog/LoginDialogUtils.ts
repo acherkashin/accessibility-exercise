@@ -1,14 +1,16 @@
-export interface ValidationMessage {
+export interface AlertMessage {
   message: string;
-  //TODO: добавить тип "success" и переименовать в alert message.
   type: 'error' | 'warning' | 'success';
 }
 
-export function validateEmail(email: string): ValidationMessage[] {
-  const validations: ValidationMessage[] = [];
+const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!emailRegex.test(String(email).toLowerCase())) {
+export function validateEmail(email: string): AlertMessage[] {
+  const validations: AlertMessage[] = [];
+
+  if (!email) {
+    return validations;
+  } else if (!emailRegex.test(String(email).toLowerCase())) {
     validations.push({
       message: 'Введённый email имеет некорректный формат.',
       type: 'error',
@@ -28,10 +30,12 @@ export function validateEmail(email: string): ValidationMessage[] {
   return validations;
 }
 
-export function validatePassword(password: string): ValidationMessage[] {
-  const validations: ValidationMessage[] = [];
+export function validatePassword(password: string): AlertMessage[] {
+  const validations: AlertMessage[] = [];
 
-  if (password.length < 8) {
+  if (!password) {
+    return validations;
+  } else if (password.length < 8) {
     validations.push({
       message: "Короткий пароль. Пароль должен состоять минимум из 8 символов.",
       type: "error",

@@ -1,10 +1,10 @@
-import { validateEmail, validatePassword, ValidationMessage } from './LoginDialogUtils';
+import { validateEmail, validatePassword, AlertMessage } from './LoginDialogUtils';
 
 export interface LoginReducerState {
   email: string;
-  emailValidation: ValidationMessage[];
+  emailValidation: AlertMessage[];
   password: string;
-  passwordValidation: ValidationMessage[];
+  passwordValidation: AlertMessage[];
 }
 
 export interface LoginReducerAction {

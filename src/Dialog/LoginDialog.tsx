@@ -32,16 +32,32 @@ export function LoginDialog({ open, onClose }: LoginDialogProps) {
         <label htmlFor="login" className="login-dialog__label">Логин</label>
         <input id="login" className={classNames("login-dialog__input", {
           "login-dialog__input--invalid": emailValidation.length > 0,
-        })} type="text" onChange={handleLoginChanged} value={email} required></input>
-        <ValidationList validations={emailValidation} />
+        })}
+          type="text"
+          aria-describedby="login-validation"
+          aria-invalid={emailValidation.length > 0}
+          onChange={handleLoginChanged}
+          value={email}
+          required
+        ></input>
+        <ValidationList id='login-validation' validations={emailValidation} />
       </div>
 
       <div className="login-dialog__field">
         <label htmlFor="password" className="login-dialog__label">Пароль</label>
-        <input id="password" className={classNames("login-dialog__input", {
-          "login-dialog__input--invalid": passwordValidation.length > 0
-        })} type="text" onChange={handlePasswordChanged} value={password} required></input>
-        <ValidationList validations={passwordValidation} />
+        <input
+          id="password"
+          className={classNames("login-dialog__input", {
+            "login-dialog__input--invalid": passwordValidation.length > 0
+          })}
+          type="text"
+          aria-describedby="password-validation"
+          aria-invalid={passwordValidation.length > 0}
+          onChange={handlePasswordChanged}
+          value={password}
+          required
+        ></input>
+        <ValidationList id='password-validation' validations={passwordValidation} />
       </div>
 
       <button className="login-dialog__login">Войти</button>
