@@ -35,7 +35,12 @@ export function Dialog({ title, className, open, children, width, height, onClos
 
   return <FocusTrap>
     <div className="dialog-overlay" onClick={handleOverlayClick} >
-      <div aria-labelledby={titleId} className={classNames("dialog", className)} role="dialog" style={{ width, height }} onKeyUp={handleKeyUp}>
+      <div
+        aria-labelledby={titleId}
+        className={classNames("dialog", className)}
+        role="dialog"
+        style={{ width, height }}
+        onKeyUp={handleKeyUp}>
         <header className="dialog__header">
           <h2 className="dialog__title" id={titleId}>{title}</h2>
           <button className="dialog__close" onClick={onClose} aria-label="close">

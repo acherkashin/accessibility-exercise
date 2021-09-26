@@ -1,7 +1,7 @@
-import { Validation } from "./LoginDialogUtils";
+import { ValidationMessage } from "./LoginDialogUtils";
 
 export interface ValidationListProps {
-  validations?: Validation[];
+  validations?: ValidationMessage[];
 }
 
 export function ValidationList({ validations }: ValidationListProps) {
