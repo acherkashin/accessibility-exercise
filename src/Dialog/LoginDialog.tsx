@@ -3,7 +3,8 @@ import { ChangeEventHandler, useCallback, useReducer } from 'react';
 import { Dialog } from './Dialog';
 import './LoginDialog.css';
 import { loginReducer } from './loginReducer';
-import { ValidationList } from './ValidationList';
+import { ValidationList } from '../ValidationList/ValidationList';
+import { isValid } from './LoginDialogUtils';
 
 export interface LoginDialogProps {
   open: boolean;
@@ -26,16 +27,19 @@ export function LoginDialog({ open, onClose }: LoginDialogProps) {
     dispatch({ type: 'set-password', text: e.target.value });
   }, []);
 
+  const isEmailValid = isValid(emailValidation);
+  const isPasswordValid = isValid(passwordValidation);
+
   return <Dialog className="login-dialog" open={open} title="Вход в личный кабинет" width={700} height={550} onClose={onClose}>
     <div className="login-dialog__content">
       <div className="login-dialog__field">
         <label htmlFor="login" className="login-dialog__label">Логин</label>
         <input id="login" className={classNames("login-dialog__input", {
-          "login-dialog__input--invalid": emailValidation.length > 0,
+          "login-dialog__input--invalid": !isEmailValid,
         })}
           type="text"
           aria-describedby="login-validation"
-          aria-invalid={emailValidation.length > 0}
+          aria-invalid={!isEmailValid}
           onChange={handleLoginChanged}
           value={email}
           required
@@ -48,11 +52,11 @@ export function LoginDialog({ open, onClose }: LoginDialogProps) {
         <input
           id="password"
           className={classNames("login-dialog__input", {
-            "login-dialog__input--invalid": passwordValidation.length > 0
+            "login-dialog__input--invalid": !isPasswordValid
           })}
           type="text"
           aria-describedby="password-validation"
-          aria-invalid={passwordValidation.length > 0}
+          aria-invalid={!isPasswordValid}
           onChange={handlePasswordChanged}
           value={password}
           required

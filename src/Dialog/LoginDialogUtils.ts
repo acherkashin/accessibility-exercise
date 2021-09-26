@@ -40,7 +40,18 @@ export function validatePassword(password: string): AlertMessage[] {
       message: "Короткий пароль. Пароль должен состоять минимум из 8 символов.",
       type: "error",
     })
+  } else {
+    validations.push({
+      message: "Хороший пароль",
+      type: "success",
+    })
   }
 
   return validations;
+}
+
+export function isValid(messages: AlertMessage[]) {
+  const issues = messages.filter(item => item.type !== 'success');
+
+  return issues.length === 0;
 }
