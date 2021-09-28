@@ -2,11 +2,12 @@ import './App.css';
 import { EventList } from './EventList/EventList';
 import { Header } from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
-import coverBig from './images/cover-big.jpg';
 import { MuseumList } from './MuseumList/MuseumList';
 import { Footer } from './Footer/Footer';
 import { useCallback, useState } from 'react';
 import { LoginDialog } from './Dialog/LoginDialog';
+import { Carousel } from './Carousel/Carousel';
+import coverBig from './images/cover-big.jpg';
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -27,8 +28,11 @@ function App() {
           <h1 className="visually-hidden">Пушкинский музей</h1>
           <section aria-labelledby="announces">
             <h2 id="announces" className="visually-hidden">Анонсы мероприятий</h2>
-            <img src={coverBig}
-              alt="От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание." />
+            <Carousel slides={[{
+              id: '1',
+              altText: "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание.",
+              imageUrl: coverBig
+            }]} />
           </section>
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
