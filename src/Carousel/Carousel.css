@@ -1,5 +1,42 @@
 .carousel {
+  position: relative;
+}
+
+.carousel__slides {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.carousel__controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 700;
+  top: 50%;
+  margin-top: -2.5em;
+  border: 0;
+  background: rgba(255,255,255,.6);
+  line-height: 1;
+  padding: 10px 5px;
+  transition: padding .4s ease-out;
+}
+
+.carousel__button:focus {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.carousel__button--prev {
+  left: 0;
+  border-radius: 0 .25em .25em 0;
+}
+
+.carousel__button--next {
+  right: 0;
+  border-radius: .25em 0 0 .25em;
 }
