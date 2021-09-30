@@ -46,22 +46,22 @@ export function Carousel({ slides }: CarouselProps) {
           <li key={id} className={classNames("carousel__slide-item", {
             "carousel__slide-item--current": id === current,
           })}>
-            <img src={imageUrl} alt={altText} />
+            <img className="carousel__slide-item-content" src={imageUrl} alt={altText} />
           </li>)}
       </ul>
       <ul className="carousel__controls">
         <li>
           <button className="carousel__button carousel__button--prev" onClick={selectPrev}>
-            <img src={chevronLeft} alt="Previous Item" />
+            <img src={chevronLeft} alt="Предыдущий слайд" />
           </button>
         </li>
         <li>
           <button className="carousel__button carousel__button--next" onClick={selectNext}>
-            <img src={chevronRight} alt="Next Item" />
+            <img src={chevronRight} alt="Следующий слайд" />
           </button>
         </li>
       </ul>
-      <div aria-live="polite" aria-atomic="true" className="liveregion visuallyhidden">Item 2 of 3</div>
+      <div aria-live="polite" aria-atomic="true" className="liveregion visually-hidden">{slides[currentIndex].altText} Слайд {currentIndex + 1} из {slides.length}</div>
     </div>
   );
 }

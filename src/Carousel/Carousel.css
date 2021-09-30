@@ -48,3 +48,8 @@
 .carousel__slide-item--current {
   display: block;
 }
+
+.carousel__slide-item-content {
+  width: 100%;
+  height: 100%;
+}
