@@ -16,6 +16,8 @@ export interface CarouselProps {
 
 /**
  * https://www.w3.org/WAI/tutorials/carousels/
+ * TODO: animation
+ * TODO: slide should be focused after prev/next buttons
  */
 export function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(slides[0].id);
