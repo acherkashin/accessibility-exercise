@@ -7,7 +7,9 @@ import { Footer } from './Footer/Footer';
 import { useCallback, useState } from 'react';
 import { LoginDialog } from './Dialog/LoginDialog';
 import { Carousel } from './Carousel/Carousel';
-import coverBig from './images/cover-big.jpg';
+import carousel1 from './images/carousel/1.jpg';
+import carousel2 from './images/carousel/2.jpg';
+import carousel3 from './images/carousel/3.jpg';
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -31,7 +33,15 @@ function App() {
             <Carousel slides={[{
               id: '1',
               altText: "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание.",
-              imageUrl: coverBig
+              imageUrl: carousel1
+            }, {
+              id: '2',
+              altText: "Смена экспозиции. Главное здание. Дневник проекта.",
+              imageUrl: carousel2,
+            }, {
+              id: '3',
+              altText: "Красные виноградники в арле. Винсент ван Гог. Монмажур. 1888 год. Научно-исследовательский реставрационный проект",
+              imageUrl: carousel3,
             }]} />
           </section>
           <section aria-describedby="events">
