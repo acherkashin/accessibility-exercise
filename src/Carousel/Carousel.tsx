@@ -11,16 +11,16 @@ export interface Slide {
 }
 
 export interface CarouselProps {
+  name: string;
   slides: Slide[];
 }
 
 /**
  * ✅ https://www.w3.org/WAI/tutorials/carousels/
- * Прочитать - https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
- * [Доступная карусель - Юлия Долгун](https://www.youtube.com/watch?v=DAO9_bXCTuk)
- * TODO: animation. scroll snap?
+ * ✅ https://www.w3.org/TR/wai-aria-practices-1.1/#carousel
+ * ✅ [Доступная карусель - Юлия Долгун](https://www.youtube.com/watch?v=DAO9_bXCTuk)
  */
-export function Carousel({ slides }: CarouselProps) {
+export function Carousel({ slides, name }: CarouselProps) {
   const [currentId, setCurrent] = useState(slides[0].id);
   const currentIndex = slides.findIndex(item => item.id === currentId);
 
@@ -43,28 +43,28 @@ export function Carousel({ slides }: CarouselProps) {
   };
 
   return (
-    <div className="carousel" aria-roledescription="Карусель">
-      <ul className="carousel__controls">
-        <li>
-          <button className="carousel__button carousel__button--prev" onClick={selectPrev} aria-label="Предыдущий слайд">
-            <img src={chevronLeft} role="presentation" alt="" />
-          </button>
-        </li>
-        <li>
-          <button className="carousel__button carousel__button--next" onClick={selectNext} aria-label="Следующий слайд">
-            <img src={chevronRight} role="presentation" alt="" />
-          </button>
-        </li>
-      </ul>
-      <ul className="carousel__slides">
-        {slides.map(({ id, imageUrl, altText }) =>
-          <li key={id} tabIndex={id === currentId ? 0 : undefined} className={classNames("carousel__slide-item", {
-            "carousel__slide-item--current": id === currentId,
-          })}>
+    <section role="group" className="carousel" aria-roledescription="Карусель" aria-label={name}>
+      <div className="carousel__controls">
+        <button className="carousel__button carousel__button--prev" onClick={selectPrev} aria-label="Предыдущий слайд">
+          <img src={chevronLeft} role="presentation" alt="" />
+        </button>
+        <button className="carousel__button carousel__button--next" onClick={selectNext} aria-label="Следующий слайд">
+          <img src={chevronRight} role="presentation" alt="" />
+        </button>
+      </div>
+      <div className="carousel__slides" aria-live="polite">
+        {slides.map(({ id, imageUrl, altText }, index) =>
+          <div key={id}
+            className={classNames("carousel__slide-item", {
+              "carousel__slide-item--current": id === currentId,
+            })}
+            role="group"
+            aria-roledescription="Слайд"
+            aria-label={`${index + 1} из ${slides.length}`}
+            tabIndex={id === currentId ? 0 : undefined}>
             <img className="carousel__slide-item-content" src={imageUrl} alt={altText} />
-          </li>)}
-      </ul>
-      <div aria-live="polite" aria-atomic="true" className="liveregion visually-hidden">Слайд {currentIndex + 1} из {slides.length}</div>
-    </div>
+          </div>)}
+      </div>
+    </section>
   );
 }

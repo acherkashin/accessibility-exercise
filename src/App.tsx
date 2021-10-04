@@ -28,9 +28,9 @@ function App() {
         <Navigation />
         <main id="content" className="page__main">
           <h1 className="visually-hidden">Пушкинский музей</h1>
-          <section aria-labelledby="announces">
-            <h2 id="announces" className="visually-hidden">Анонсы мероприятий</h2>
-            <Carousel slides={[{
+          <Carousel
+            name="Анонсы мероприятий"
+            slides={[{
               id: '1',
               altText: "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание.",
               imageUrl: carousel1
@@ -43,7 +43,6 @@ function App() {
               altText: "Красные виноградники в арле. Винсент ван Гог. Монмажур. 1888 год. Научно-исследовательский реставрационный проект",
               imageUrl: carousel3,
             }]} />
-          </section>
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
