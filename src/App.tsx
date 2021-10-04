@@ -2,11 +2,14 @@ import './App.css';
 import { EventList } from './EventList/EventList';
 import { Header } from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
-import coverBig from './images/cover-big.jpg';
 import { MuseumList } from './MuseumList/MuseumList';
 import { Footer } from './Footer/Footer';
 import { useCallback, useState } from 'react';
 import { LoginDialog } from './Dialog/LoginDialog';
+import { Carousel } from './Carousel/Carousel';
+import carousel1 from './images/carousel/1.jpg';
+import carousel2 from './images/carousel/2.jpg';
+import carousel3 from './images/carousel/3.jpg';
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -25,11 +28,21 @@ function App() {
         <Navigation />
         <main id="content" className="page__main">
           <h1 className="visually-hidden">Пушкинский музей</h1>
-          <section aria-labelledby="announces">
-            <h2 id="announces" className="visually-hidden">Анонсы мероприятий</h2>
-            <img src={coverBig}
-              alt="От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание." />
-          </section>
+          <Carousel
+            name="Анонсы мероприятий"
+            slides={[{
+              id: '1',
+              altText: "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание.",
+              imageUrl: carousel1
+            }, {
+              id: '2',
+              altText: "Смена экспозиции. Главное здание. Дневник проекта.",
+              imageUrl: carousel2,
+            }, {
+              id: '3',
+              altText: "Красные виноградники в арле. Винсент ван Гог. Монмажур. 1888 год. Научно-исследовательский реставрационный проект",
+              imageUrl: carousel3,
+            }]} />
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
