@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TabPanelProps } from "./TabPanel";
 
-
-interface TabsProps {
+export interface TabsProps {
+  // TODO: replace with correct type. We should be able to pass sinle element to tabs. look how it is impelemented in material-ui.
   children: JSX.Element[];
 }
 
@@ -11,7 +11,7 @@ interface TabsProps {
  * @returns
  */
 export function Tabs({ children }: TabsProps) {
-  const tabs = children.map(item => item.props as TabPanelProps)
+  const tabs = React.Children.map(children, item => item.props as TabPanelProps)
   const [selectedTab, selectTab] = useState(tabs.find(tab => tab.selected)?.title ?? tabs[0].title);
 
   return <div className="tabs">
@@ -19,7 +19,7 @@ export function Tabs({ children }: TabsProps) {
       {tabs.map(item => <button role="tab" onClick={() => selectTab(item.title)}>{item.title}</button>)}
     </div>
     <div>
-      {children.map((item, i) => React.cloneElement(item, {
+      {React.Children.map(children, (item, i) => React.cloneElement(item, {
         index: i,
         selected: selectedTab === (item.props as TabPanelProps).title
       }))}

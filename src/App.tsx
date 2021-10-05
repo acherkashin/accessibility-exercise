@@ -10,6 +10,8 @@ import { Carousel } from './Carousel/Carousel';
 import carousel1 from './images/carousel/1.jpg';
 import carousel2 from './images/carousel/2.jpg';
 import carousel3 from './images/carousel/3.jpg';
+import { Tabs } from './Tabs/Tabs';
+import { TabPanel } from './Tabs/TabPanel';
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -46,7 +48,17 @@ function App() {
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
-            <EventList />
+            <Tabs>
+              <TabPanel title="Все" selected>
+                <EventList />
+              </TabPanel>
+              <TabPanel title="Сегодня">
+                <EventList />
+              </TabPanel>
+              <TabPanel title="Завтра">
+                <EventList />
+              </TabPanel>
+            </Tabs>
           </section>
 
           <section aria-labelledby="museum">

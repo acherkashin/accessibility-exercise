@@ -8,6 +8,7 @@ import study from "./../images/museums/study.png";
 
 import './MuseumList.css';
 
+//TODO: MuseumList should recieve array of events instead of using hardcoded ones.
 export function MuseumList() {
   return (
     <ul className="museum-list">

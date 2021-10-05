@@ -4,6 +4,7 @@ import richter from './../images/events/richter.png';
 import tatoo from './../images/events/tatoo.png';
 import matisse from './../images/events/matisse.png';
 
+//TODO: EventList should recieve array of events instead of using hardcoded ones.
 export function EventList() {
   return <ul className="events__list">
     <EventListItem id="1" imageSrc={richter} title="Святослав Рихтер в кругу друзей.Москва — Коктебель" date="до 20 ноября" />
