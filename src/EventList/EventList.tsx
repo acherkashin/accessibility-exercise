@@ -8,7 +8,7 @@ export interface EventListProps {
 
 export function EventList({ events: items }: EventListProps) {
   return <ul className="events__list">
-    {items.map(item => <EventListItem {...item} />)}
+    {items.map(item => <EventListItem key={item.id} {...item} />)}
   </ul>
 }
 

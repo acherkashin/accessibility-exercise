@@ -13,27 +13,9 @@ import carousel3 from './images/carousel/3.jpg';
 import { Tabs } from './Tabs/Tabs';
 import { TabPanel } from './Tabs/TabPanel';
 
-import richter from './images/events/richter.png';
-import tatoo from './images/events/tatoo.png';
-import matisse from './images/events/matisse.png';
-import { EventListItemProps } from './EventList/EventListItem';
+import { museumListData } from './MuseumList/MuseumListData';
+import { eventListData } from './EventList/EventListData';
 
-const events: EventListItemProps[] = [{
-  id: "1",
-  imageSrc: richter,
-  title: "Святослав Рихтер в кругу друзей.Москва — Коктебель",
-  date: "до 20 ноября"
-}, {
-  id: "2",
-  imageSrc: tatoo,
-  title: "Тату",
-  date: "до 27 сентября"
-}, {
-  id: "3",
-  imageSrc: matisse,
-  title: "От Дюрера до Матисса.Избранные рисунки из собрания ГМИИ им.А.С.Пушкина",
-  date: "до 1 ноября"
-}];
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -72,20 +54,20 @@ function App() {
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
             <Tabs>
               <TabPanel title="Все" selected>
-                <EventList events={events} />
+                <EventList events={eventListData} />
               </TabPanel>
               <TabPanel title="Сегодня">
-                <EventList events={[events[0]]} />
+                <EventList events={[eventListData[0]]} />
               </TabPanel>
               <TabPanel title="Завтра">
-                <EventList events={[events[1]]} />
+                <EventList events={[eventListData[1]]} />
               </TabPanel>
             </Tabs>
           </section>
 
           <section aria-labelledby="museum">
             <h2 id="museum">Музей</h2>
-            <MuseumList />
+            <MuseumList items={museumListData}/>
           </section>
           <section aria-describedby="online-translation">
             <h2 id="online-translation">Онлайн трансляция</h2>
