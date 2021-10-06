@@ -1,0 +1,18 @@
+.tabs__tab {
+  border-radius: 8px;
+  height: 58px;
+  padding: 0 37px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  border: none;
+  background-color: transparent;
+}
+
+.tabs__tab-list {
+  margin-bottom: 32px;
+}
+
+.tabs__tab--active {
+  background: #C7D2E9;
+}
