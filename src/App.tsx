@@ -67,7 +67,14 @@ function App() {
 
           <section aria-labelledby="museum">
             <h2 id="museum">Музей</h2>
-            <MuseumList items={museumListData}/>
+            <Tabs>
+              <TabPanel title="Здания" selected>
+                <MuseumList items={museumListData} />
+              </TabPanel>
+              <TabPanel title="История">
+                <MuseumList items={museumListData.slice(1).slice(-3)} />
+              </TabPanel>
+            </Tabs>
           </section>
           <section aria-describedby="online-translation">
             <h2 id="online-translation">Онлайн трансляция</h2>
