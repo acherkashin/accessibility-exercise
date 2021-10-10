@@ -36,6 +36,14 @@ export function Tabs({ children }: TabsProps) {
     }
   };
 
+  const selectFirstTab = () => {
+    selectTab(tabs[0].title);
+  };
+
+  const selectLastTab = () => {
+    selectTab(tabs[tabs.length - 1].title);
+  };
+
   useEffect(() => {
     activeTabElement.current?.focus();
   }, [selectedTab]);
@@ -55,6 +63,12 @@ export function Tabs({ children }: TabsProps) {
         break;
       case 'ArrowRight':
         selectNextTab(tabTitle);
+        break;
+      case 'Home':
+        selectFirstTab();
+        break;
+      case 'End':
+        selectLastTab();
         break;
     }
   };
