@@ -7,6 +7,10 @@ import './Tabs.css';
 export interface TabsProps {
   // TODO: replace with correct type. We should be able to pass sinle element to tabs. look how it is impelemented in material-ui.
   children: JSX.Element[];
+  /**
+   * Required for a11y to automatically link tabs with their panels
+   */
+  name: string;
 }
 
 /**
@@ -14,7 +18,7 @@ export interface TabsProps {
  * https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel
  * @returns
  */
-export function Tabs({ children }: TabsProps) {
+export function Tabs({ children, name }: TabsProps) {
   const tabs = React.Children.map(children, (item) => item.props as TabPanelProps);
   const activeTabElement = useRef<HTMLButtonElement>(null);
   const [selectedTab, selectTab] = useState(
@@ -80,7 +84,7 @@ export function Tabs({ children }: TabsProps) {
   return (
     <div className="tabs">
       <div className="tabs__tab-list" role="tablist">
-        {tabs.map((item) => {
+        {tabs.map((item, index) => {
           const isSelected = selectedTab === item.title;
 
           return (
@@ -95,6 +99,7 @@ export function Tabs({ children }: TabsProps) {
               onKeyDown={(e) => handleKeyDown(e, item.title)}
               ref={isSelected ? activeTabElement : null}
               aria-selected={isSelected}
+              aria-controls={`${name}-panel-${index}`}
             >
               {item.title}
             </button>
@@ -106,7 +111,8 @@ export function Tabs({ children }: TabsProps) {
           React.cloneElement(item, {
             index: i,
             selected: selectedTab === (item.props as TabPanelProps).title,
-          })
+            tabName: name
+          } as TabPanelProps)
         )}
       </div>
     </div>

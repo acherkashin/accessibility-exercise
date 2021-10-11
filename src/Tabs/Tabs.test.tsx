@@ -1,7 +1,6 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { configureAxe } from 'jest-axe';
 import 'jest-axe/extend-expect';
-import { act } from 'react-dom/test-utils';
 import { TabPanel } from './TabPanel';
 import { Tabs } from './Tabs';
 
@@ -10,7 +9,7 @@ const axe = configureAxe({})
 describe('Tabs', () => {
   it('tabs are accessible', async () => {
     const { container } = render(
-      <Tabs>
+      <Tabs name="test">
         <TabPanel title="Tab 1">
           Content 1
         </TabPanel>
@@ -28,7 +27,7 @@ describe('Tabs', () => {
 
   it('first tab is selected', () => {
     render(
-      <Tabs>
+      <Tabs name="test">
         <TabPanel title="Tab 1">
           Content 1
         </TabPanel>
@@ -49,7 +48,7 @@ describe('Tabs', () => {
   describe('Keyboard Navigation', () => {
     it('selects next tab', () => {
       render(
-        <Tabs>
+        <Tabs name="test">
           <TabPanel title="Tab 1">
             Content 1
           </TabPanel>
@@ -72,7 +71,7 @@ describe('Tabs', () => {
 
     it('selects previous tab', async () => {
       render(
-        <Tabs>
+        <Tabs name="test">
           <TabPanel title="Tab 1">
             Content 1
           </TabPanel>
@@ -95,7 +94,7 @@ describe('Tabs', () => {
 
     it('selects last item', async () => {
       render(
-        <Tabs>
+        <Tabs name="test">
           <TabPanel title="Tab 1" selected>
             Content 1
           </TabPanel>
@@ -118,7 +117,7 @@ describe('Tabs', () => {
 
     it('selects first item', async () => {
       render(
-        <Tabs>
+        <Tabs name="test">
           <TabPanel title="Tab 1">
             Content 1
           </TabPanel>

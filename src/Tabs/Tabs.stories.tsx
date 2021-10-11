@@ -5,9 +5,9 @@ export default {
   title: 'Tabs',
 }
 
-export const LoggedOut = () => {
+export const Default = () => {
   return (
-    <Tabs>
+    <Tabs name="story">
       <TabPanel title="Все" selected>
         <div>Все</div>
       </TabPanel>

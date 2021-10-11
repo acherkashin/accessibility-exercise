@@ -52,7 +52,7 @@ function App() {
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
-            <Tabs>
+            <Tabs name="events">
               <TabPanel title="Все" selected>
                 <EventList events={eventListData} />
               </TabPanel>
@@ -67,7 +67,7 @@ function App() {
 
           <section aria-labelledby="museum">
             <h2 id="museum">Музей</h2>
-            <Tabs>
+            <Tabs name="buildings">
               <TabPanel title="Здания" selected>
                 <MuseumList items={museumListData} />
               </TabPanel>
