@@ -23,7 +23,6 @@ export function Tabs({ children }: TabsProps) {
   const selectNextTab = (tabTitle: string) => {
     const index = tabs.findIndex((item) => item.title === tabTitle);
     if (index < tabs.length - 1) {
-      console.log('Select Next Tab');
       selectTab(tabs[index + 1].title);
     }
   };
@@ -31,7 +30,6 @@ export function Tabs({ children }: TabsProps) {
   const selectPrevTab = (tabTitle: string) => {
     const index = tabs.findIndex((item) => item.title === tabTitle);
     if (index > 0) {
-      console.log('Select Prev Tab');
       selectTab(tabs[index - 1].title);
     }
   };
@@ -48,26 +46,31 @@ export function Tabs({ children }: TabsProps) {
     activeTabElement.current?.focus();
   }, [selectedTab]);
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    // prevent page scroll
-    e.preventDefault();
-  };
-
-  const handleKeyUp = (e: React.KeyboardEvent<HTMLButtonElement>, tabTitle: string) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, tabTitle: string) => {
     switch (e.key) {
       case 'Enter':
+        // prevent page scroll
+        e.preventDefault();
         selectTab(tabTitle);
         break;
       case 'ArrowLeft':
+        // prevent page scroll
+        e.preventDefault();
         selectPrevTab(tabTitle);
         break;
       case 'ArrowRight':
+        // prevent page scroll
+        e.preventDefault();
         selectNextTab(tabTitle);
         break;
       case 'Home':
+        // prevent page scroll
+        e.preventDefault();
         selectFirstTab();
         break;
       case 'End':
+        // prevent page scroll
+        e.preventDefault();
         selectLastTab();
         break;
     }
@@ -75,7 +78,7 @@ export function Tabs({ children }: TabsProps) {
 
   return (
     <div className="tabs">
-      <div className="tabs__tab-list" role="tablist" onKeyDown={handleKeyDown}>
+      <div className="tabs__tab-list" role="tablist">
         {tabs.map((item) => {
           const isSelected = selectedTab === item.title;
 
@@ -87,7 +90,7 @@ export function Tabs({ children }: TabsProps) {
               role="tab"
               tabIndex={isSelected ? 0 : -1}
               onClick={() => selectTab(item.title)}
-              onKeyUp={(e) => handleKeyUp(e, item.title)}
+              onKeyUp={(e) => handleKeyDown(e, item.title)}
               ref={isSelected ? activeTabElement : null}
             >
               {item.title}
