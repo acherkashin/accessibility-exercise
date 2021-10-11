@@ -84,6 +84,7 @@ export function Tabs({ children }: TabsProps) {
 
           return (
             <button
+              key={item.title}
               className={classNames('tabs__tab', {
                 'tabs__tab--active': isSelected,
               })}
