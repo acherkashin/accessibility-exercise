@@ -11,6 +11,7 @@ export function TabPanel({ children, index, selected }: TabPanelProps) {
   return <div id={`tabpanel_${index}`}
     className={classNames('tabs__panel', { 'tabs__panel--active': selected })}
     hidden={!selected}
+    role="tabpanel"
   >
     {children}
   </div>

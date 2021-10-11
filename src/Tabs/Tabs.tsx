@@ -11,6 +11,7 @@ export interface TabsProps {
 
 /**
  * https://medium.com/@andreasmcd/creating-an-accessible-tab-component-with-react-24ed30fde86a
+ * https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel
  * @returns
  */
 export function Tabs({ children }: TabsProps) {
@@ -91,8 +92,9 @@ export function Tabs({ children }: TabsProps) {
               role="tab"
               tabIndex={isSelected ? 0 : -1}
               onClick={() => selectTab(item.title)}
-              onKeyUp={(e) => handleKeyDown(e, item.title)}
+              onKeyDown={(e) => handleKeyDown(e, item.title)}
               ref={isSelected ? activeTabElement : null}
+              aria-selected={isSelected}
             >
               {item.title}
             </button>
