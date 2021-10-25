@@ -1,3 +1,4 @@
+import { useTranslation, Trans } from 'react-i18next';
 import './App.css';
 import { EventList } from './EventList/EventList';
 import { Header } from './Header/Header';
@@ -18,6 +19,8 @@ import { eventListData } from './EventList/EventListData';
 
 
 function App() {
+  const { t } = useTranslation();
+
   const [isLoginOpened, setLoginOpened] = useState(false);
   const close = useCallback(() => {
     setLoginOpened(false);
@@ -29,7 +32,9 @@ function App() {
   return (
     <>
       <div className="page">
-        <a id="skip-to-content" href="#content">Перейти к основному содержимому страницы</a>
+        <a id="skip-to-content" href="#content">
+          <Trans t={t} i18nKey="skipLink" />
+        </a>
         <Header className="page__header" onLoginClick={open} />
         <Navigation />
         <main id="content" className="page__main">

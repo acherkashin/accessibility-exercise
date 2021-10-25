@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { MouseEventHandler } from "react";
+import { useTranslation } from "react-i18next";
 import logo from '../images/logo.png';
 
 import './Header.css';
@@ -10,6 +11,16 @@ export interface HeaderProps {
 }
 
 export function Header({ className, onLoginClick, }: HeaderProps) {
+  const { i18n } = useTranslation();
+
+  const handleEnglishClick = () => {
+    i18n.changeLanguage('eng');
+  };
+
+  const handleRussianClick = () => {
+    i18n.changeLanguage('ru');
+  };
+
   return (
     <header className={classNames("header", className)}>
       <img src={logo} alt="Логотип музея изобразительных искусств имени Александра Сергеевича Пушкина" />
@@ -19,11 +30,12 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
           <button className="header__search-submit" type="submit" aria-label="Искать"></button>
         </form>
         <nav className="header__langs" aria-label="Выбрать язык">
-          <span className="header__lang-switch header__lang-switch--active">
+          {/* TODO: use buttons instead of spans and a */}
+          <span className="header__lang-switch header__lang-switch--active" onClick={handleRussianClick}>
             <span aria-hidden="true">Рус</span>
             <span className="visually-hidden">Русский</span>
           </span>
-          <a className="header__lang-switch" href="#" aria-label="English">Eng</a>
+          <a className="header__lang-switch" href="#" aria-label="English" onClick={handleEnglishClick}>Eng</a>
         </nav>
         <button className="header__login" aria-label="Авторизоваться" aria-haspopup="true" onClick={onLoginClick}>
           <svg width="46" height="46" viewBox="0 0 46 46" focusable="false" aria-hidden="true">
