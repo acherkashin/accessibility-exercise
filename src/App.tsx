@@ -10,6 +10,12 @@ import { Carousel } from './Carousel/Carousel';
 import carousel1 from './images/carousel/1.jpg';
 import carousel2 from './images/carousel/2.jpg';
 import carousel3 from './images/carousel/3.jpg';
+import { Tabs } from './Tabs/Tabs';
+import { TabPanel } from './Tabs/TabPanel';
+
+import { museumListData } from './MuseumList/MuseumListData';
+import { eventListData } from './EventList/EventListData';
+
 
 function App() {
   const [isLoginOpened, setLoginOpened] = useState(false);
@@ -46,12 +52,29 @@ function App() {
           <section aria-describedby="events">
             <h2 id="events">Выставки и события</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
-            <EventList />
+            <Tabs name="events">
+              <TabPanel title="Все" selected>
+                <EventList events={eventListData} />
+              </TabPanel>
+              <TabPanel title="Сегодня">
+                <EventList events={[eventListData[0]]} />
+              </TabPanel>
+              <TabPanel title="Завтра">
+                <EventList events={[eventListData[1]]} />
+              </TabPanel>
+            </Tabs>
           </section>
 
           <section aria-labelledby="museum">
             <h2 id="museum">Музей</h2>
-            <MuseumList />
+            <Tabs name="buildings">
+              <TabPanel title="Здания" selected>
+                <MuseumList items={museumListData} />
+              </TabPanel>
+              <TabPanel title="История">
+                <MuseumList items={museumListData.slice(1).slice(-3)} />
+              </TabPanel>
+            </Tabs>
           </section>
           <section aria-describedby="online-translation">
             <h2 id="online-translation">Онлайн трансляция</h2>
