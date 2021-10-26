@@ -21,12 +21,14 @@ i18n
       en: {
         translation: {
           // here we will place our translations...
-          skipLink: "Go to main content"
+          skipLink: "Go to main content",
+          logo: "Museum Logo"
         }
       },
       ru: {
         translation: {
-          skipLink: "Перейти к основному содержимому страницы"
+          skipLink: "Перейти к основному содержимому страницы",
+          logo: "Логотип музея",
         }
       }
     }

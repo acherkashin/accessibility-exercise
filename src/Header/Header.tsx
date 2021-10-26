@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import { MouseEventHandler } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import logo from '../images/logo.png';
+import { Button } from "../stories/Button";
 
 import './Header.css';
 
@@ -11,7 +12,7 @@ export interface HeaderProps {
 }
 
 export function Header({ className, onLoginClick, }: HeaderProps) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const handleEnglishClick = () => {
     i18n.changeLanguage('eng');
@@ -21,21 +22,33 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
     i18n.changeLanguage('ru');
   };
 
+
+
   return (
     <header className={classNames("header", className)}>
-      <img src={logo} alt="Логотип музея изобразительных искусств имени Александра Сергеевича Пушкина" />
+      <img src={logo} alt={t("logo")} />
       <div className="header__right">
         <form className="header__search-form" role="search">
           <input className="header__search" type="search" aria-label="Поиск" />
           <button className="header__search-submit" type="submit" aria-label="Искать"></button>
         </form>
         <nav className="header__langs" aria-label="Выбрать язык">
-          {/* TODO: use buttons instead of spans and a */}
-          <span className="header__lang-switch header__lang-switch--active" onClick={handleRussianClick}>
-            <span aria-hidden="true">Рус</span>
-            <span className="visually-hidden">Русский</span>
-          </span>
-          <a className="header__lang-switch" href="#" aria-label="English" onClick={handleEnglishClick}>Eng</a>
+          <button
+            className={getSwitchClassName(i18n.language === 'ru')}
+            onClick={handleRussianClick}
+            aria-label="Русский"
+            lang="ru"
+          >
+            Рус
+          </button>
+          <button
+            className={getSwitchClassName(i18n.language === 'eng')}
+            aria-label="English"
+            onClick={handleEnglishClick}
+            lang="en"
+          >
+            Eng
+          </button>
         </nav>
         <button className="header__login" aria-label="Авторизоваться" aria-haspopup="true" onClick={onLoginClick}>
           <svg width="46" height="46" viewBox="0 0 46 46" focusable="false" aria-hidden="true">
@@ -47,4 +60,10 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
       </div>
     </header>
   );
+}
+
+function getSwitchClassName(isActive: boolean) {
+  return classNames("header__lang-switch", {
+    "header__lang-switch--active": isActive
+  });
 }
