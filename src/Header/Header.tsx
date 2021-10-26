@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { MouseEventHandler } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import logo from '../images/logo.png';
-import { Button } from "../stories/Button";
 
 import './Header.css';
+import { LangButton } from "./LangButton";
 
 export interface HeaderProps {
   className?: string;
@@ -22,8 +22,6 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
     i18n.changeLanguage('ru');
   };
 
-
-
   return (
     <header className={classNames("header", className)}>
       <img src={logo} alt={t("logo")} />
@@ -33,22 +31,21 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
           <button className="header__search-submit" type="submit" aria-label="Искать"></button>
         </form>
         <nav className="header__langs" aria-label="Выбрать язык">
-          <button
-            className={getSwitchClassName(i18n.language === 'ru')}
+          <LangButton
+            isSelected={i18n.language === 'ru'}
             onClick={handleRussianClick}
             aria-label="Русский"
             lang="ru"
           >
             Рус
-          </button>
-          <button
-            className={getSwitchClassName(i18n.language === 'eng')}
+          </LangButton>
+          <LangButton
+            isSelected={i18n.language === 'eng'}
             aria-label="English"
             onClick={handleEnglishClick}
-            lang="en"
-          >
+            lang="en">
             Eng
-          </button>
+          </LangButton>
         </nav>
         <button className="header__login" aria-label="Авторизоваться" aria-haspopup="true" onClick={onLoginClick}>
           <svg width="46" height="46" viewBox="0 0 46 46" focusable="false" aria-hidden="true">
@@ -60,10 +57,4 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
       </div>
     </header>
   );
-}
-
-function getSwitchClassName(isActive: boolean) {
-  return classNames("header__lang-switch", {
-    "header__lang-switch--active": isActive
-  });
 }
