@@ -3,6 +3,7 @@ import chevronLeft from './assets/chevron-left.png';
 import chevronRight from './assets/chevron-right.png';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 export interface Slide {
   id: string;
@@ -21,6 +22,7 @@ export interface CarouselProps {
  * ✅ [Доступная карусель - Юлия Долгун](https://www.youtube.com/watch?v=DAO9_bXCTuk)
  */
 export function Carousel({ slides, name }: CarouselProps) {
+  const { t } = useTranslation();
   const [currentId, setCurrent] = useState(slides[0].id);
   const currentIndex = slides.findIndex(item => item.id === currentId);
 
@@ -60,7 +62,7 @@ export function Carousel({ slides, name }: CarouselProps) {
             })}
             role="group"
             aria-roledescription="Слайд"
-            aria-label={`${index + 1} из ${slides.length}`}
+            aria-label={t('slideIndex', { current: index + 1, all: slides.length })}
             tabIndex={id === currentId ? 0 : undefined}>
             <img className="carousel__slide-item-content" src={imageUrl} alt={altText} />
           </div>)}

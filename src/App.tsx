@@ -55,7 +55,7 @@ function App() {
               imageUrl: carousel3,
             }]} />
           <section aria-describedby="events">
-            <h2 id="events">Выставки и события</h2>
+            <h2 id="events">{t('exhibitionsAndEvents')}</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
             <Tabs name="events">
               <TabPanel title="Все" selected>
@@ -71,7 +71,7 @@ function App() {
           </section>
 
           <section aria-labelledby="museum">
-            <h2 id="museum">Музей</h2>
+            <h2 id="museum">{t('museum')}</h2>
             <Tabs name="buildings">
               <TabPanel title="Здания" selected>
                 <MuseumList items={museumListData} />
@@ -82,14 +82,14 @@ function App() {
             </Tabs>
           </section>
           <section aria-describedby="online-translation">
-            <h2 id="online-translation">Онлайн трансляция</h2>
+            <h2 id="online-translation">{t('onlineStreaming')}</h2>
             <iframe src="https://www.youtube.com/embed/5qRR-5H1XgU" title="Ай Вейвей: движение к общечеловеческому"
               width="1030" height="600"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </section>
 
           <section aria-labelledby="live">
-            <h2 id="live">Экскурсии и лекции в прямом эфире</h2>
+            <h2 id="live">{t('liveTitle')}</h2>
             <p>
               С 1 июля вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям и лекциям для взрослых и
               детей, оплатив участие на сайте. Встречи будут проходить в прямом эфире на платформе <span

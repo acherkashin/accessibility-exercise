@@ -27,8 +27,8 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
       <img src={logo} alt={t("logo")} />
       <div className="header__right">
         <form className="header__search-form" role="search">
-          <input className="header__search" type="search" aria-label="Поиск" />
-          <button className="header__search-submit" type="submit" aria-label="Искать"></button>
+          <input className="header__search" type="search" aria-label={t('search.input')} />
+          <button className="header__search-submit" type="submit" aria-label={t('search.button')}></button>
         </form>
         <nav className="header__langs" aria-label="Выбрать язык">
           <LangButton

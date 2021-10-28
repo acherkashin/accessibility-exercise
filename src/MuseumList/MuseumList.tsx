@@ -8,7 +8,7 @@ export interface MuseumListProps {
 export function MuseumList({ items }: MuseumListProps) {
   return (
     <ul className="museum-list">
-      {items.map(item => <MuseumListItem {...item} />)}
+      {items.map(item => <MuseumListItem key={item.title} {...item} />)}
     </ul>
   )
 }

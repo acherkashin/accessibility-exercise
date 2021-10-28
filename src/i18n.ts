@@ -22,13 +22,33 @@ i18n
         translation: {
           // here we will place our translations...
           skipLink: "Go to main content",
-          logo: "Museum Logo"
+          logo: "Museum Logo",
+          slideIndex: "{{current}} out of {{all}}",
+          exhibitionsAndEvents: "Exhibitions and events",
+          museum: "Museum",
+          onlineStreaming: "Online Streaming",
+          liveBroadcast: "Live Broadcast",
+          liveTitle: "Tours and lectures live",
+          search: {
+            input: 'Search',
+            button: 'Search',
+          }
         }
       },
       ru: {
         translation: {
           skipLink: "Перейти к основному содержимому страницы",
           logo: "Логотип музея",
+          slideIndex: "{{current}} из {{all}}",
+          exhibitionsAndEvents: "Выставки и события",
+          museum: "Музей",
+          onlineStreaming: "Онлайн трансляция",
+          liveBroadcast: "Прямой эфир",
+          liveTitle: "Экскурсии и лекции в прямом эфире",
+          search: {
+            input: 'Поиск',
+            button: 'Искать'
+          }
         }
       }
     }
