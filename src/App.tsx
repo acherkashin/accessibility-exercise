@@ -38,9 +38,9 @@ function App() {
         <Header className="page__header" onLoginClick={open} />
         <Navigation />
         <main id="content" className="page__main">
-          <h1 className="visually-hidden">Пушкинский музей</h1>
+          <h1 className="visually-hidden">{t('mainHeading')}</h1>
           <Carousel
-            name="Анонсы мероприятий"
+            name={t('carouselName')}
             slides={[{
               id: '1',
               altText: "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им Александра Сергеевича Пушкина. С 10 июля по 1 ноября. Главное издание.",

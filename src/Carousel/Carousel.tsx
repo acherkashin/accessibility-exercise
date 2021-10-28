@@ -45,7 +45,7 @@ export function Carousel({ slides, name }: CarouselProps) {
   };
 
   return (
-    <section role="group" className="carousel" aria-roledescription="Карусель" aria-label={name}>
+    <section role="group" className="carousel" aria-roledescription={t('carouselRole')} aria-label={name}>
       <div className="carousel__controls">
         <button className="carousel__button carousel__button--prev" onClick={selectPrev} aria-label="Предыдущий слайд">
           <img src={chevronLeft} role="presentation" alt="" />

@@ -32,7 +32,10 @@ i18n
           search: {
             input: 'Search',
             button: 'Search',
-          }
+          },
+          mainHeading: 'Pushkin Museum',
+          carouselRole: "Carousel",
+          carouselName: 'Carousel Name',
         }
       },
       ru: {
@@ -48,7 +51,10 @@ i18n
           search: {
             input: 'Поиск',
             button: 'Искать'
-          }
+          },
+          mainHeading: 'Пушкинский музей',
+          carouselRole: "Карусель",
+          carouselName: 'Анонсы мероприятий',
         }
       }
     }
