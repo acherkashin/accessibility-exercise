@@ -7,15 +7,15 @@ export const eventListData: EventListItemProps[] = [{
   id: "1",
   imageSrc: richter,
   title: "Святослав Рихтер в кругу друзей.Москва — Коктебель",
-  date: "до 20 ноября"
+  date: new Date(2022, 11, 20),
 }, {
   id: "2",
   imageSrc: tatoo,
   title: "Тату",
-  date: "до 27 сентября"
+  date: new Date(2022, 9, 27),
 }, {
   id: "3",
   imageSrc: matisse,
   title: "От Дюрера до Матисса.Избранные рисунки из собрания ГМИИ им.А.С.Пушкина",
-  date: "до 1 ноября"
+  date: new Date(2022, 11, 1)
 }];

@@ -15,6 +15,13 @@ i18n
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
+      format: (value, format, lng) => {
+        if (value instanceof Date && format === 'MONTH_DAY') {
+          return new Intl.DateTimeFormat(lng, { month: 'long', day: 'numeric' }).format(value);
+        }
+
+        return value;
+      },
     },
     lng: 'ru',
     resources: {
@@ -36,6 +43,7 @@ i18n
           mainHeading: 'Pushkin Museum',
           carouselRole: "Carousel",
           carouselName: 'Carousel Name',
+          eventDate: 'Will take place {{date, MONTH_DAY}}',
         }
       },
       ru: {
@@ -55,6 +63,7 @@ i18n
           mainHeading: 'Пушкинский музей',
           carouselRole: "Карусель",
           carouselName: 'Анонсы мероприятий',
+          eventDate: 'Состоится {{date, MONTH_DAY}}'
         }
       }
     }
