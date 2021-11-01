@@ -44,6 +44,11 @@ i18n
           carouselRole: "Carousel",
           carouselName: 'Carousel Name',
           eventDate: 'Will take place {{date, MONTH_DAY}}',
+          socialNetwork: 'Social Networks',
+          newsSubscription: 'News Subscription',
+          visitorsWithDisabilities: 'Visitors with disabilities',
+          ticketsAndBenefits: "Tickets and benefits",
+          antiCorruption: "Anti-corruption",
         }
       },
       ru: {
@@ -63,7 +68,12 @@ i18n
           mainHeading: 'Пушкинский музей',
           carouselRole: "Карусель",
           carouselName: 'Анонсы мероприятий',
-          eventDate: 'Состоится {{date, MONTH_DAY}}'
+          eventDate: 'Состоится {{date, MONTH_DAY}}',
+          socialNetwork: 'Соцсети',
+          newsSubscription: 'Подписка на новости',
+          visitorsWithDisabilities: 'Посетителям с ограниченными возможностями',
+          ticketsAndBenefits: "Билеты и льготы",
+          antiCorruption: "Противодействие коррупции",
         }
       }
     }

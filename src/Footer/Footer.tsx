@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 export interface FooterProps {
@@ -6,16 +9,18 @@ export interface FooterProps {
 }
 
 export function Footer({ className }: FooterProps) {
+  const { t } = useTranslation();
+
   return (
     <footer className={classNames("footer", className)}>
       <div className="footer__inner">
         <div className="footer__left">
-          <a className="footer__left-link" href="#">Посетителям с ограниченными возможностями</a>
-          <a className="footer__left-link" href="#">Билеты и льготы</a>
-          <a className="footer__left-link" href="#">Противодействие коррупции</a>
+          <a className="footer__left-link" href="#">{t('visitorsWithDisabilities')}</a>
+          <a className="footer__left-link" href="#">{t('ticketsAndBenefits')}</a>
+          <a className="footer__left-link" href="#">{t('antiCorruption', { defaultValue: "Противодействие коррупции" })}</a>
 
           <section>
-            <h3>Соцсети</h3>
+            <h3>{t('socialNetwork')}</h3>
             <a
               className="footer__social-link footer__social-link--mail"
               href="mailto:cherkalexander@gmail.com"
@@ -32,7 +37,7 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         <section className="footer__right">
-          <h3>Подписка на новости</h3>
+          <h3>{t('newsSubscription')}</h3>
           <form>
             <div className="footer__row">
               <input className="footer__agree-checkbox" id="agree" type="checkbox" required />
