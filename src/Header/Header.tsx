@@ -15,7 +15,7 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
   const { t, i18n } = useTranslation();
 
   const handleEnglishClick = () => {
-    i18n.changeLanguage('eng');
+    i18n.changeLanguage('en');
   };
 
   const handleRussianClick = () => {
@@ -40,7 +40,7 @@ export function Header({ className, onLoginClick, }: HeaderProps) {
             Рус
           </LangButton>
           <LangButton
-            isSelected={i18n.language === 'eng'}
+            isSelected={i18n.language === 'en'}
             aria-label="English"
             onClick={handleEnglishClick}
             lang="en">

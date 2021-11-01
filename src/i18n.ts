@@ -23,7 +23,6 @@ i18n
         return value;
       },
     },
-    lng: 'ru',
     resources: {
       en: {
         translation: {
