@@ -19,5 +19,8 @@
   "newsSubscription": "News Subscription",
   "visitorsWithDisabilities": "Visitors with disabilities",
   "ticketsAndBenefits": "Tickets and benefits",
-  "antiCorruption": "Anti-corruption"
+  "antiCorruption": "Anti-corruption",
+  "all": "All",
+  "today": "Today",
+  "Tomorrow": "Tomorrow"
 }

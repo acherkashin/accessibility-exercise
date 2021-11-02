@@ -8,13 +8,13 @@ export default {
 export const Default = () => {
   return (
     <Tabs name="story">
-      <TabPanel title="Все" selected>
+      <TabPanel value="all" title="Все" selected>
         <div>Все</div>
       </TabPanel>
-      <TabPanel title="Сегодня">
+      <TabPanel value="today" title="Сегодня">
         <div>Сегодня</div>
       </TabPanel>
-      <TabPanel title="Завтра">
+      <TabPanel value="tomorrow" title="Завтра">
         <div>Завтра</div>
       </TabPanel>
     </Tabs>

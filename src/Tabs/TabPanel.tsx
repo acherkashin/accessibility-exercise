@@ -2,6 +2,7 @@ import classNames from "classnames"
 
 export interface TabPanelProps {
   index?: number;
+  value: string;
   title: string;
   /**
    * TODO: better to move "selected" to "Tabs" and pass it to TabPanel via React Context

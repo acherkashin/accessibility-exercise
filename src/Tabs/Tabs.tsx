@@ -22,51 +22,51 @@ export function Tabs({ children, name }: TabsProps) {
   const tabs = React.Children.map(children, (item) => item.props as TabPanelProps);
   const activeTabElement = useRef<HTMLButtonElement>(null);
   const [selectedTab, selectTab] = useState(
-    tabs.find((tab) => tab.selected)?.title ?? tabs[0].title
+    tabs.find((tab) => tab.selected)?.value ?? tabs[0].value
   );
 
-  const selectNextTab = (tabTitle: string) => {
-    const index = tabs.findIndex((item) => item.title === tabTitle);
+  const selectNextTab = (tabValue: string) => {
+    const index = tabs.findIndex((item) => item.value === tabValue);
     if (index < tabs.length - 1) {
-      selectTab(tabs[index + 1].title);
+      selectTab(tabs[index + 1].value);
     }
   };
 
-  const selectPrevTab = (tabTitle: string) => {
-    const index = tabs.findIndex((item) => item.title === tabTitle);
+  const selectPrevTab = (tabValue: string) => {
+    const index = tabs.findIndex((item) => item.value === tabValue);
     if (index > 0) {
-      selectTab(tabs[index - 1].title);
+      selectTab(tabs[index - 1].value);
     }
   };
 
   const selectFirstTab = () => {
-    selectTab(tabs[0].title);
+    selectTab(tabs[0].value);
   };
 
   const selectLastTab = () => {
-    selectTab(tabs[tabs.length - 1].title);
+    selectTab(tabs[tabs.length - 1].value);
   };
 
   useEffect(() => {
     activeTabElement.current?.focus();
   }, [selectedTab]);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, tabTitle: string) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, tabValue: string) => {
     switch (e.key) {
       case 'Enter':
         // prevent page scroll
         e.preventDefault();
-        selectTab(tabTitle);
+        selectTab(tabValue);
         break;
       case 'ArrowLeft':
         // prevent page scroll
         e.preventDefault();
-        selectPrevTab(tabTitle);
+        selectPrevTab(tabValue);
         break;
       case 'ArrowRight':
         // prevent page scroll
         e.preventDefault();
-        selectNextTab(tabTitle);
+        selectNextTab(tabValue);
         break;
       case 'Home':
         // prevent page scroll
@@ -85,19 +85,19 @@ export function Tabs({ children, name }: TabsProps) {
     <div className="tabs">
       <div className="tabs__tab-list" role="tablist">
         {tabs.map((item, index) => {
-          const isSelected = selectedTab === item.title;
+          const isSelected = selectedTab === item.value;
 
           return (
             <button
-              key={item.title}
+              key={item.value}
               id={`${name}-tab-${index}`}
               className={classNames('tabs__tab', {
                 'tabs__tab--active': isSelected,
               })}
               role="tab"
               tabIndex={isSelected ? 0 : -1}
-              onClick={() => selectTab(item.title)}
-              onKeyDown={(e) => handleKeyDown(e, item.title)}
+              onClick={() => selectTab(item.value)}
+              onKeyDown={(e) => handleKeyDown(e, item.value)}
               ref={isSelected ? activeTabElement : null}
               aria-selected={isSelected}
               aria-controls={`${name}-panel-${index}`}
@@ -111,7 +111,7 @@ export function Tabs({ children, name }: TabsProps) {
         {React.Children.map(children, (item, i) =>
           React.cloneElement(item, {
             index: i,
-            selected: selectedTab === (item.props as TabPanelProps).title,
+            selected: selectedTab === (item.props as TabPanelProps).value,
             tabName: name
           } as TabPanelProps)
         )}

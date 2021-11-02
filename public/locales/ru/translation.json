@@ -19,5 +19,8 @@
   "newsSubscription": "Подписка на новости",
   "visitorsWithDisabilities": "Посетителям с ограниченными возможностями",
   "ticketsAndBenefits": "Билеты и льготы",
-  "antiCorruption": "Противодействие коррупции"
+  "antiCorruption": "Противодействие коррупции",
+  "all": "Все",
+  "today": "Сегодня",
+  "tomorrow": "Завтра"
 }

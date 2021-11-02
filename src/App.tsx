@@ -58,13 +58,13 @@ function App() {
             <h2 id="events">{t('exhibitionsAndEvents')}</h2>
             <span id="buy_ticket" className="visually-hidden">Купить билет</span>
             <Tabs name="events">
-              <TabPanel title="Все" selected>
+              <TabPanel value="all" title={t("all", "All")} selected>
                 <EventList events={eventListData} />
               </TabPanel>
-              <TabPanel title="Сегодня">
+              <TabPanel value="today" title={t('today', "Today")}>
                 <EventList events={[eventListData[0]]} />
               </TabPanel>
-              <TabPanel title="Завтра">
+              <TabPanel value="tomorrow" title={t('tomorrow', "Tomorrow")}>
                 <EventList events={[eventListData[1]]} />
               </TabPanel>
             </Tabs>
@@ -73,10 +73,10 @@ function App() {
           <section aria-labelledby="museum">
             <h2 id="museum">{t('museum')}</h2>
             <Tabs name="buildings">
-              <TabPanel title="Здания" selected>
+              <TabPanel value="building" title="Здания" selected>
                 <MuseumList items={museumListData} />
               </TabPanel>
-              <TabPanel title="История">
+              <TabPanel value="history" title="История">
                 <MuseumList items={museumListData.slice(1).slice(-3)} />
               </TabPanel>
             </Tabs>
