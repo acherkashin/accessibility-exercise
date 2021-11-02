@@ -5,7 +5,7 @@ import { Header } from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
 import { MuseumList } from './MuseumList/MuseumList';
 import { Footer } from './Footer/Footer';
-import { useCallback, useState } from 'react';
+import { Suspense, useCallback, useState } from 'react';
 import { LoginDialog } from './Dialog/LoginDialog';
 import { Carousel } from './Carousel/Carousel';
 import carousel1 from './images/carousel/1.jpg';
@@ -111,4 +111,10 @@ function App() {
   );
 }
 
-export default App;
+export function WrapperApp() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <App />
+    </Suspense>
+  );
+}

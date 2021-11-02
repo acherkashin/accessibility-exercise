@@ -1,0 +1,23 @@
+{
+  "skipLink": "Go to main content",
+  "logo": "Museum Logo",
+  "slideIndex": "{{current}} out of {{all}}",
+  "exhibitionsAndEvents": "Exhibitions and events",
+  "museum": "Museum",
+  "onlineStreaming": "Online Streaming",
+  "liveBroadcast": "Live Broadcast",
+  "liveTitle": "Tours and lectures live",
+  "search": {
+    "input": "Search",
+    "button": "Search"
+  },
+  "mainHeading": "Pushkin Museum",
+  "carouselRole": "Carousel",
+  "carouselName": "Carousel Name",
+  "eventDate": "Will take place {{date, MONTH_DAY}}",
+  "socialNetwork": "Social Networks",
+  "newsSubscription": "News Subscription",
+  "visitorsWithDisabilities": "Visitors with disabilities",
+  "ticketsAndBenefits": "Tickets and benefits",
+  "antiCorruption": "Anti-corruption"
+}

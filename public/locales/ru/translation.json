@@ -1,0 +1,23 @@
+{
+  "skipLink": "Перейти к основному содержимому страницы",
+  "logo": "Логотип музея",
+  "slideIndex": "{{current}} из {{all}}",
+  "exhibitionsAndEvents": "Выставки и события",
+  "museum": "Музей",
+  "onlineStreaming": "Онлайн трансляция",
+  "liveBroadcast": "Прямой эфир",
+  "liveTitle": "Экскурсии и лекции в прямом эфире",
+  "search": {
+    "input": "Поиск",
+    "button": "Искать"
+  },
+  "mainHeading": "Пушкинский музей",
+  "carouselRole": "Карусель",
+  "carouselName": "Анонсы мероприятий",
+  "eventDate": "Состоится {{date, MONTH_DAY}}",
+  "socialNetwork": "Соцсети",
+  "newsSubscription": "Подписка на новости",
+  "visitorsWithDisabilities": "Посетителям с ограниченными возможностями",
+  "ticketsAndBenefits": "Билеты и льготы",
+  "antiCorruption": "Противодействие коррупции"
+}
